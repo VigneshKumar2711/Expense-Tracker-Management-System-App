@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+
+        <!-- Add Transaction Form -->
+        <form id="transaction-form">
+            <input type="text" id="description" placeholder="Description" required />
+            <input type="number" id="amount" placeholder="Amount (INR)" required />
+            <input type="date" id="date" required />
+            <select id="category" required>
+                <option value="Food">Food</option>
+                <option value="Transportation">Transportation</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Other">Other</option>
+            </select>
+            <h4>Filter By Transactions</h4>
+            <select id="type" required>
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+            <button type="submit">Add Transaction</button>
+            <div id="error-message" class="error-message"></div>
+        </form>
+
+        <!-- Display Summary -->
+        <div id="summary">
+            <h2>Summary</h2>
+            <p>Total Income: <span id="total-income">0.00</span></p>
+            <p>Total Expenses: <span id="total-expenses">0.00</span></p>
+            <p>Net Income: <span id="net-income">0.00</span></p>
+        </div>
+
+        <!-- Transaction Table -->
+        <div id="transaction-table-container">
+            <h3>Transaction List</h3>
+            <table id="transaction-table">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Amount (INR)</th>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Type</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="transaction-list"></tbody>
+            </table>
+        </div>
+
+        <!-- Import and Export Section -->
+        <div id="import-export-container">
+            <h3>Import / Export Transactions</h3>
+            <button id="export-button">Export Transactions</button>
+            <input type="file" id="import-file" accept=".json" />
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
